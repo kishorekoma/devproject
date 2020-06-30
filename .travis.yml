@@ -13,3 +13,14 @@ after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     - docker push kishorekoma/dev1
+deploy:
+    provider: elasticbeanstalk
+    region: us-east-2
+    app: devproject
+    env: Devproject-env
+    bucket_name: elasticbeanstalk-us-east-2-531096691206
+    bucket_path: devproject
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_acces_key: $AWS_SECRET_KEY

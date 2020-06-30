@@ -1,0 +1,26 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "redis-server",
+            "image": "redis",
+            "memory": 500,
+            "essential": true
+        },
+        {
+            "name": "node-app",
+            "image": "kishorekoma/dev1"
+        }
+    ] ,
+    "portMappings": [
+        {
+          "containerPort": 8081,
+          "hostport": 80
+        }	  
+    ] ,
+    "links": [
+                "redis-server"
+            ],
+            "memory": 128,
+            "essential": false    
+}
