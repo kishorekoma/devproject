@@ -6,6 +6,9 @@ services:
 before_install:
     - docker build -t kishorekoma/dev1 .
 
+script:
+    - docker run kishorekoma/nodejsdoc  npm start      
+
 after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
