@@ -7,7 +7,7 @@ before_install:
     - docker build -t kishorekoma/nodejsdoc .
 
 script:
-    - docker run kishorekoma/nodejsdoc  npm test
+    - docker run kishorekoma/dev1  npm test
 
 after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
