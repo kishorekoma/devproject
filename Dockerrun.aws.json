@@ -9,18 +9,19 @@
         },
         {
             "name": "node-app",
-            "image": "kishorekoma/dev1"
+            "image": "kishorekoma/dev1",
+	    "memory": 128,
+            "essential": false
+
         }
     ] ,
     "portMappings": [
         {
           "containerPort": 8081,
-          "hostport": 80
+          "hostport": 8081
         }	  
     ] ,
     "links": [
                 "redis-server"
-            ],
-            "memory": 128,
-            "essential": false    
+             ]      
 }
